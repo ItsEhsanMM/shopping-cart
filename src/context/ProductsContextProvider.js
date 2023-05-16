@@ -9,7 +9,7 @@ const ProductsContextProvider = (props) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    // Get product
+    // Get products
     const getProducts = async () => {
       setProducts(await api());
     };
