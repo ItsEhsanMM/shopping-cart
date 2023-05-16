@@ -8,7 +8,6 @@ import { productsContext } from "../context/ProductsContextProvider";
 
 const Store = () => {
   const products = useContext(productsContext);
-  console.log(products);
 
   return (
     <div
