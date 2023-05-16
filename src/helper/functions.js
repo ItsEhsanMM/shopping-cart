@@ -19,9 +19,4 @@ const quantityCount = (state, id) => {
    }
 };
 
-const findindex = (state, id) => {
-   const result = state.selectedItem.findIndex((item) => item.id === id);
-   return result;
-};
-
-export { shorten, isAdded, quantityCount, findindex };
+export { shorten, isAdded, quantityCount };
