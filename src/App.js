@@ -1,11 +1,17 @@
-import React from 'react';
+import React from "react";
+
+//component
+import Store from "./components/Store";
+
+//context
+import ProductsContextProvider from "./context/ProductsContextProvider";
 
 const App = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  return (
+    <ProductsContextProvider>
+      <Store />
+    </ProductsContextProvider>
+  );
 };
 
 export default App;

@@ -4,7 +4,7 @@ const Base = "https://fakestoreapi.com";
 
 const fetchProducts = async () => {
   const products = await axios.get(`${Base}/products`);
-  return products;
+  return products.data;
 };
 
 export { fetchProducts };
