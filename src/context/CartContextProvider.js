@@ -10,18 +10,14 @@ const initialState = {
 
 const totalItem = (items) => {
    const itemCounter = items.reduce((total, item) => total + item.quantity, 0);
-   const total = items
-      .reduce((total, item) => total + item.quantity * item.price, 0)
-      .toFixed(2);
+   const total = items.reduce((total, item) => total + item.quantity * item.price, 0).toFixed(2);
    return { itemCounter, total };
 };
 
 const cartReducer = (state, action) => {
    switch (action.type) {
       case "ADD_ITEM":
-         if (
-            !state.selectedItem.find((item) => item.id === action.payload.id)
-         ) {
+         if (!state.selectedItem.find((item) => item.id === action.payload.id)) {
             state.selectedItem.push({
                ...action.payload,
                quantity: 1,
@@ -31,22 +27,19 @@ const cartReducer = (state, action) => {
             ...state,
             selectedItem: [...state.selectedItem],
             ...totalItem(state.selectedItem),
+            checkout: false,
          };
 
       case "REMOVE":
-         const newSelectedItem = state.selectedItem.filter(
-            (item) => item.id !== action.payload.id
-         );
+         const newSelectedItem = state.selectedItem.filter((item) => item.id !== action.payload.id);
          return {
             ...state,
             selectedItem: [...newSelectedItem],
-            ...totalItem(state.selectedItem),
+            ...totalItem(newSelectedItem),
          };
 
       case "INCREASE":
-         const indexI = state.selectedItem.findIndex(
-            (item) => item.id === action.payload.id
-         );
+         const indexI = state.selectedItem.findIndex((item) => item.id === action.payload.id);
          state.selectedItem[indexI].quantity++;
          return {
             ...state,
@@ -54,20 +47,20 @@ const cartReducer = (state, action) => {
          };
 
       case "DECREASE":
-         const indexD = state.selectedItem.findIndex(
-            (item) => item.id === action.payload.id
-         );
+         const indexD = state.selectedItem.findIndex((item) => item.id === action.payload.id);
          state.selectedItem[indexD].quantity--;
          return { ...state, ...totalItem(state.selectedItem) };
 
       case "CHECKOUT":
          return {
-            ...initialState,
+            selectedItem: [],
+            itemCounter: 0,
+            total: 0,
             checkout: true,
          };
 
       case "CLEAR":
-         return { ...initialState };
+         return { selectedItem: [], itemCounter: 0, total: 0, checkout: false };
 
       default:
          return state;
@@ -79,11 +72,7 @@ export const CartContext = createContext();
 const CartContextProvider = ({ children }) => {
    const [state, dispatch] = useReducer(cartReducer, initialState);
 
-   return (
-      <CartContext.Provider value={{ state, dispatch }}>
-         {children}
-      </CartContext.Provider>
-   );
+   return <CartContext.Provider value={{ state, dispatch }}>{children}</CartContext.Provider>;
 };
 
 export default CartContextProvider;
