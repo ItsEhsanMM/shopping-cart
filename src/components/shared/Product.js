@@ -56,6 +56,7 @@ const Product = ({ data }) => {
                      <img src={trashIcon} alt="remove" style={{ width: "10px" }} />
                   </button>
                )}
+               {quantityCount(state, data.id) > 0 && <span>{quantityCount(state, data.id)}</span>}
 
                {isAdded(state, data.id) ? (
                   <button
