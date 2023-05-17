@@ -1,3 +1,75 @@
+@import './variables';
+@import './mixins';
+
+* {
+    // outline: 1px solid red;
+}
+
 .container {
-    margin-top: 4rem;
+    margin-top: 6rem;
+    width: calc(100% - 6rem);
+    min-height: calc(100dvh - 6rem);
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    padding: 0 3rem;
+}
+
+.checkoutContainer {
+    background-color: $mainBgColor;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 18.5rem;
+    height: 6rem;
+    border-radius: 20px;
+    padding: 1rem;
+
+    @include cartBoxShadow();
+
+    .totalaBContainer {
+        // padding-top: 3rem;
+        // font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // flex-direction: column;
+        // justify-content: space-between;
+        width: inherit;
+        height: 100%;
+    }
+
+    .pContainer {
+        height: calc(100% - 2rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1rem 0;
+
+        span {
+            color: black;
+        }
+        p {
+            font-size: 1.2rem;
+            color: $productPriceColor;
+        }
+    }
+
+    
+}
+
+
+.buttons {
+    width: 45%;
+    height: 6rem;
+    display: flex ;
+    justify-content: space-between ;
+    align-items: flex-end;
+    padding-bottom: 2rem;
+
+    button {
+        height: 2rem;
+        width: 4rem;
+    }
 }

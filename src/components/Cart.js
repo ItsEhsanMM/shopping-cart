@@ -8,26 +8,33 @@ import { CartContext } from "../context/CartContextProvider";
 import { Link } from "react-router-dom";
 
 // Style
-import styles from './Cart.module.scss'
+import styles from "./Cart.module.scss";
 
 const Cart = () => {
    const { state, dispatch } = useContext(CartContext);
 
    return (
-         <div className={styles.container}>
-            <div>
-               {state.selectedItem.map((item) => (
-                  <CartDetails key={item.id} data={item} />
-               ))}
-            </div>
+      <div className={styles.container}>
+         <div className={styles.itemContainer}>
+            {state.selectedItem.map((item) => (
+               <CartDetails key={item.id} data={item} />
+            ))}
+         </div>
+         <div className={styles.checkoutContainer}>
             {state.itemCounter > 0 && (
-               <div>
-                  <p>total items: {state.itemCounter}</p>
-                  <p>total price: {state.total} $</p>
-                  <div>
+               <div className={styles.totalaBContainer}>
+                  <div className={styles.pContainer}>
+                     <p>
+                        <span>total items:</span> {state.itemCounter}
+                     </p>
+                     <p>
+                        <span>total price:</span> {state.total} $
+                     </p>
+                  </div>
+                  <div className={styles.buttons}>
                      <button onClick={() => dispatch({ type: "CLEAR", payload: state })}>Clear</button>
                      <button onClick={() => dispatch({ type: "CHECKOUT", payload: state })}>CheckOut</button>
-                  </div>
+                     </div>
                </div>
             )}
 
@@ -45,6 +52,7 @@ const Cart = () => {
                </div>
             )}
          </div>
+      </div>
    );
 };
 
