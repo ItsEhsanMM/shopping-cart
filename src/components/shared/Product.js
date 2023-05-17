@@ -9,30 +9,34 @@ import { CartContext } from "../../context/CartContextProvider";
 
 // Icons
 import trashIcon from "../../assets/icons/trash.svg";
+import plusIcon from '../../assets/icons/plus.svg'
+import minusIcon from '../../assets/icons/minus.svg'
+
+// Styles
+import styles from "./Product.module.scss";
 
 const Product = ({ data }) => {
    const { state, dispatch } = useContext(CartContext);
 
    return (
-      <div>
-         <img
-            src={data.image}
-            alt="product"
-            style={{
-               width: "200px",
-            }}
-         />
+      <div className={styles.container}>
+         <div className={styles.imageContainer}>
+            <img src={data.image} alt="product" />
 
-         <h2>{shorten(data.title)}</h2>
+         </div>
 
-         <p>{data.price} $</p>
+         <div className={styles.labelContainer}>
+            <h2>{shorten(data.title)}</h2>
+            <p>{data.price} $</p>
+         </div>
 
-         <div>
+         <div className={styles.bottomContainer}>
             <Link to={`/products/${data.id}`}>Detail</Link>
 
-            <div>
+            <div className={styles.buttonContainer}>
                {quantityCount(state, data.id) > 1 && (
                   <button
+                  className={styles.decrease}
                      onClick={() =>
                         dispatch({
                            type: "DECREASE",
@@ -40,12 +44,13 @@ const Product = ({ data }) => {
                         })
                      }
                   >
-                     -
+                     <img src={minusIcon} alt="decrease" />
                   </button>
                )}
 
                {quantityCount(state, data.id) === 1 && (
                   <button
+                  className={styles.remove}
                      onClick={() =>
                         dispatch({
                            type: "REMOVE",
@@ -53,13 +58,14 @@ const Product = ({ data }) => {
                         })
                      }
                   >
-                     <img src={trashIcon} alt="remove" style={{ width: "10px" }} />
+                     <img src={trashIcon} alt="remove" />
                   </button>
                )}
                {quantityCount(state, data.id) > 0 && <span>{quantityCount(state, data.id)}</span>}
 
                {isAdded(state, data.id) ? (
                   <button
+                  className={styles.increase}
                      onClick={() =>
                         dispatch({
                            type: "INCREASE",
@@ -67,10 +73,11 @@ const Product = ({ data }) => {
                         })
                      }
                   >
-                     +
+                     <img src={plusIcon} alt="add more" />
                   </button>
                ) : (
                   <button
+                  className={styles.bigButton}
                      onClick={() =>
                         dispatch({
                            type: "ADD_ITEM",

@@ -1,0 +1,15 @@
+@mixin cartBoxShadow() {
+   box-shadow: -5px -5px 66px -3px rgba(0, 0, 0, 0.1), 5px 5px 3px -3px rgba(0, 0, 0, 0.1);
+}
+
+@mixin productButtonShadow() {
+   box-shadow: inset -19px -19px 16px -6px rgba(0, 0, 0, 0.1);
+}
+
+@mixin media($size) {
+   @if ($size == 'tablet') {
+      @media (max-width: 768px) {
+         @content;
+      }
+   }
+}
