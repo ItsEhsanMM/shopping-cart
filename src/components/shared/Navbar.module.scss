@@ -1,0 +1,55 @@
+@import '../variables';
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+
+.container {
+    top: 0;
+    width: calc(100% - 6rem);
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    background-color: #f9f9f9;
+    position: fixed;
+    box-shadow: 5px 0 3px rgba($color: black, $alpha: 0.6);
+
+    a {
+        // text-decoration: none;
+        font-size: 1.5rem;
+        color: black;
+        height: inherit;
+        display: flex;
+        align-items: center;
+    }
+
+    .cartContainer {
+        height: inherit;
+        display: flex;
+        align-items: center;
+        position: relative;
+        img {
+            width: 2rem !important;
+            z-index: 1;
+        }
+
+        span {
+            position: absolute;
+            right: -15px;
+            top: 5px;
+            z-index: 2;
+            background-color: rgba($color: $productButtonColor, $alpha: 0.9);
+            color: white;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            // text-align: center;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Nanum Pen Script', cursive;
+        }
+
+    }
+}
