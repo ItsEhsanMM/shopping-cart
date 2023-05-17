@@ -57,13 +57,15 @@
    display: flex;
    align-items: center;
    width: calc(100% - 3rem);
-   height: 4rem;
+   height: 3.2rem;
+   width: inherit;
    justify-content: space-between;
-   // margin-top: 1rem;
-   padding: 0 2rem;
+   margin-top: 1.5rem;
+   // gap: 1rem;
+
 
    .aContainer {
-      height: 4rem;
+      height: 3.2rem;
       display: flex;
       align-items: center;
       a {
@@ -117,7 +119,7 @@
          background: $productButtonColor;
          color: $productBgColor;
          text-align: center;
-         width: 3.5rem;
+         width: 4.5rem;
          height: 1.3rem;
          border-radius: 10px;
          @include productButtonShadow();
@@ -153,14 +155,16 @@
    }
 
    .bottomContainer {
+      width: calc(100% - 1rem);
       margin-top: 5.5rem;
+      padding: 0 1rem;
 
       span {
          font-size: 1.3rem !important;
       }
 
       a {
-         font-size: 1.5rem;
+         font-size: 1.2rem !important;
       }
       .buttonContainer {
          .remove {
@@ -178,9 +182,10 @@
       }
 
       .bigButton {
-         font-size: 1.5rem;
-         width: 6.5rem !important;
-         height: 2.2rem !important;
+         font-size: 1rem;
+         width: 5rem !important;
+         height: 2rem !important;
+         border-radius: 1.5rem !important;
       }
    }
 }
@@ -207,17 +212,22 @@
    }
 
    .bottomContainer {
-      margin-top: 6rem;
+      // margin-top: 6rem;
+      width: calc(100% - 3rem);
+      height: 6rem;
+      padding: 0 2rem;
 
       .aContainer {
-         // height: 1rem;
+         height: inherit;
 
          a {
-            font-size: 1.8rem;
+            font-size: 1.8rem !important;
          }
       }
 
       .buttonContainer {
+         height: inherit;
+         // width: inherit;
          .decrease,
          .increase {
             img {
@@ -238,11 +248,17 @@
             margin: 0 1rem;
          }
 
-         .bigButton {
-            font-size: 1.8rem;
-            width: 7rem !important;
-            height: 3rem !important;
+         .addContainer {
+
+            .bigButton {
+               // padding: 1px;
+               font-size: 1.8rem;
+               width: 9rem !important;
+               height: 3rem !important;
+               border-radius: 2rem;
+            }
          }
+
       }
    }
 }

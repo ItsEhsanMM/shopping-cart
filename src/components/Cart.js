@@ -7,12 +7,14 @@ import CartDetails from "./shared/CartDetails";
 import { CartContext } from "../context/CartContextProvider";
 import { Link } from "react-router-dom";
 
+// Style
+import styles from './Cart.module.scss'
+
 const Cart = () => {
    const { state, dispatch } = useContext(CartContext);
 
    return (
-      <>
-         <div>
+         <div className={styles.container}>
             <div>
                {state.selectedItem.map((item) => (
                   <CartDetails key={item.id} data={item} />
@@ -43,7 +45,6 @@ const Cart = () => {
                </div>
             )}
          </div>
-      </>
    );
 };
 

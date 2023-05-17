@@ -77,6 +77,7 @@ const Product = ({ data }) => {
                      <img src={plusIcon} alt="add more" />
                   </button>
                ) : (
+                  <div className={styles.addContainer}>
                   <button
                      className={styles.bigButton}
                      onClick={() =>
@@ -88,6 +89,7 @@ const Product = ({ data }) => {
                   >
                      Add Item
                   </button>
+                  </div>
                )}
             </div>
          </div>
