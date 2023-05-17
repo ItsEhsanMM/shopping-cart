@@ -11,17 +11,18 @@ import ProductsContextProvider from "./context/ProductsContextProvider";
 import CartContextProvider from "./context/CartContextProvider";
 import Cart from "./components/Cart";
 
+
 const App = () => {
    return (
       <ProductsContextProvider>
          <CartContextProvider>
             <Navbar />
-            <Routes>
-               <Route path="/cart" element={<Cart />} />
-               <Route path="/products" element={<Store />} />
-               <Route path="/*" element={<Navigate to="/products" />} />
-               <Route path="/products/:id" element={<ProductDetail />} />
-            </Routes>
+               <Routes>
+                  <Route path="/cart" element={<Cart />} />
+                  <Route path="/products" element={<Store />} />
+                  <Route path="/*" element={<Navigate to="/products" />} />
+                  <Route path="/products/:id" element={<ProductDetail />} />
+               </Routes>
          </CartContextProvider>
       </ProductsContextProvider>
    );

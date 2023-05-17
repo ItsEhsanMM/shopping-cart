@@ -1,0 +1,113 @@
+@import "./variables";
+
+* {
+    // outline: 1px red solid;
+}
+
+.container {
+   width: 100%;
+   height: calc(100dvh - 4rem);
+   margin-top: 4rem;
+   background-color: $mainBgColor;
+   display: flex;
+   align-items: flex-start;
+   justify-content: center;
+}
+
+.sContainer {
+   margin-top: 3rem;
+   width: 60%;
+   // height: ;
+   border: 1px solid black;
+   border-radius: 15px;
+   // padding: 2rem;
+   overflow: hidden;
+   display: flex;
+   background-color: $productBgColor;
+   height: 30rem;
+}
+
+.imgContainer {
+   margin-right: 2.5rem;
+   height: 20rem;
+   padding: 2.5rem 0;
+   padding-left: 2rem;
+
+   img {
+      width: 15rem !important;
+      border-radius: 15px;
+   }
+}
+
+.labelContainer {
+   // padding-top: 1rem;
+   padding: 1.5rem;
+   border-left: 1px silver solid;
+
+   h3 {
+      font-size: 2.5rem;
+      overflow: auto;
+      font-weight: 700;
+      height: 9rem;
+   }
+
+   .description {
+      font-size: 1.3rem;
+      margin-top: 1.2rem;
+      width: 85%;
+      height: 5rem;
+      overflow: auto;
+      border: 1px silver solid;
+      border-radius: 10px;
+    //   overflow-anchor: none;
+      padding: 1rem;
+   }
+}
+
+
+.aContainer {
+    // display: flex;
+    // justify-content: flex-end;
+    padding-right: 6.5rem;
+
+    a {
+        text-decoration: none;
+        font-size: 1.2rem;
+        background-color: $productButtonColor;
+        color: $productBgColor;
+        padding: 0.3rem;
+        border-radius: 8px;
+        transition: all 0.2s ease-in;
+
+        &:hover {
+            background-color: rgba($color: $productButtonColor, $alpha: 0.9);
+        }
+    }
+
+}
+
+.sLabelContainer {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 6.5rem;
+    align-items: center;
+    margin: 1rem 0 1rem 0;
+    height: 5rem;
+
+   
+    .price {
+        font-size: 1.5rem;
+        color: $productPriceColor;
+    }
+
+    .category {
+        //    margin-top: 0.5rem;
+           font-size: 1.5rem;
+        //    height: 2rem;
+        
+           span {
+            color: $productPriceColor;
+           }
+        }
+        
+}
