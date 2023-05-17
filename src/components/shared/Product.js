@@ -9,8 +9,8 @@ import { CartContext } from "../../context/CartContextProvider";
 
 // Icons
 import trashIcon from "../../assets/icons/trash.svg";
-import plusIcon from '../../assets/icons/plus.svg'
-import minusIcon from '../../assets/icons/minus.svg'
+import plusIcon from "../../assets/icons/plus.svg";
+import minusIcon from "../../assets/icons/minus.svg";
 
 // Styles
 import styles from "./Product.module.scss";
@@ -22,7 +22,6 @@ const Product = ({ data }) => {
       <div className={styles.container}>
          <div className={styles.imageContainer}>
             <img src={data.image} alt="product" />
-
          </div>
 
          <div className={styles.labelContainer}>
@@ -31,12 +30,14 @@ const Product = ({ data }) => {
          </div>
 
          <div className={styles.bottomContainer}>
-            <Link to={`/products/${data.id}`}>Detail</Link>
+            <div className={styles.aContainer}>
+               <Link to={`/products/${data.id}`}>Detail</Link>
+            </div>
 
             <div className={styles.buttonContainer}>
                {quantityCount(state, data.id) > 1 && (
                   <button
-                  className={styles.decrease}
+                     className={styles.decrease}
                      onClick={() =>
                         dispatch({
                            type: "DECREASE",
@@ -50,7 +51,7 @@ const Product = ({ data }) => {
 
                {quantityCount(state, data.id) === 1 && (
                   <button
-                  className={styles.remove}
+                     className={styles.remove}
                      onClick={() =>
                         dispatch({
                            type: "REMOVE",
@@ -65,7 +66,7 @@ const Product = ({ data }) => {
 
                {isAdded(state, data.id) ? (
                   <button
-                  className={styles.increase}
+                     className={styles.increase}
                      onClick={() =>
                         dispatch({
                            type: "INCREASE",
@@ -77,7 +78,7 @@ const Product = ({ data }) => {
                   </button>
                ) : (
                   <button
-                  className={styles.bigButton}
+                     className={styles.bigButton}
                      onClick={() =>
                         dispatch({
                            type: "ADD_ITEM",
