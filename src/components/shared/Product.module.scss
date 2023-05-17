@@ -75,15 +75,15 @@
       .remove,
       .increase,
       .decrease {
+         display: flex;
+         align-items: center;
+         justify-content: center;
          width: 1.2rem;
          background: none;
       }
 
       .decrease,
       .increase {
-         display: flex;
-         align-items: center;
-         justify-content: center;
          img {
             width: 15px;
          }
@@ -97,8 +97,6 @@
          img {
             width: 12px;
          }
-
-         
       }
 
       button {
@@ -118,6 +116,61 @@
          &:hover {
             background-color: #3498db;
          }
+      }
+   }
+}
+
+@media (min-width: 426px) {
+   .container {
+      width: 180px;
+      height: 350px;
+   }
+
+   .imageContainer {
+      height: 150px;
+      img {
+         width: 120px;
+      }
+   }
+   .labelContainer {
+      h2 {
+         font-size: 1.5rem;
+      }
+
+      p {
+         font-size: 2rem;
+      }
+   }
+
+   .bottomContainer {
+      margin-top: 5.5rem;
+
+      span {
+         font-size: 1.3rem !important;
+      }
+
+      a {
+         font-size: 1.5rem;
+      }
+      .buttonContainer {
+         .remove {
+            display: flex;
+            align-items: center;
+            img {
+               width: 16px;
+            }
+         }
+         .increase {
+            img {
+               width: 45px !important;
+            }
+         }
+      }
+
+      .bigButton {
+         font-size: 1.5rem;
+         width: 6.5rem !important;
+         height: 2.2rem !important;
       }
    }
 }
