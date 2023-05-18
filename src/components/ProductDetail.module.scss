@@ -6,12 +6,13 @@
 
 .container {
    width: 100%;
-   height: calc(100dvh - 4rem);
+   min-height: 100dvh;
    margin-top: 4rem;
    background-color: $mainBgColor;
    display: flex;
    align-items: flex-start;
    justify-content: center;
+   padding-bottom: 4rem;
 }
 
 .sContainer {

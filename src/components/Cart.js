@@ -39,7 +39,7 @@ const Cart = () => {
             )}
 
             {state.checkout && (
-               <div>
+               <div className={styles.success}>
                   <p>checkout successfuly</p>
                   <Link to="/products">Buy More</Link>
                </div>

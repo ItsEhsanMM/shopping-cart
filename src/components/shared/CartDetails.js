@@ -19,8 +19,11 @@ const CartDetails = ({ data }) => {
 
    return (
       <div className={Styles.container}>
+         <div className={Styles.imgContainer}>
          <img src={image} alt="product" style={{ width: "100px" }} />
-         <div>
+         </div>
+         <div className={Styles.second}>
+         <div className={Styles.labelContainer}>
             <h2 className={Styles.title}>{shorten(title)}</h2>
             <h3 className={Styles.price}>{price} $</h3>
          </div>
@@ -42,6 +45,7 @@ const CartDetails = ({ data }) => {
                   +
                </button>
             </div>
+         </div>
          </div>
       </div>
    );
