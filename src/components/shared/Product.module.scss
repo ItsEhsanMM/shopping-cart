@@ -18,7 +18,7 @@
    border-radius: 10px;
 }
 .labelContainer {
-   border-top: 1px solid silver;
+   // border-top: 1px solid silver;
    width: 100%;
    height: 40px;
    padding: 7px 0;
@@ -48,8 +48,10 @@
    height: 100px;
    margin-bottom: 10px;
    img {
-      padding-top: 10px;
-      width: 70px;
+      // padding-top: 10px;
+      padding: 1rem;
+      width: calc(100% - 2rem);
+      height: calc(100% - 2rem);
    }
 }
 

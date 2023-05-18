@@ -1,6 +1,10 @@
 @import '../variables';
 @import '../mixins';
 
+* {
+    // outline: 1px solid red;
+}
+
 
 .container {
     width: calc(100% - 2rem);
@@ -19,6 +23,7 @@
         width: 6rem;
         height: inherit;
         align-items: center;
+        // justify-content: space-between;
         // padding-bottom: 6rem;
         
         justify-content: space-between;
@@ -33,11 +38,11 @@
             border: none;
             background:none;
 
-            img {
-                width: 1.2rem !important;
-                height: 3rem;
-                padding-top: 5px;
-            }
+            // img {
+            //     width: 1.2rem !important;
+            //     height: 3rem;
+            //     padding-top: 5px;
+            // }
 
 
         }
@@ -46,10 +51,10 @@
 
 
 }
-img {
-    height: fit-content;
-    margin: 0 1rem;
-}
+// img {
+//     height: fit-content;
+//     margin: 0 1rem;
+// }
 
 .price {
     color: $productPriceColor;

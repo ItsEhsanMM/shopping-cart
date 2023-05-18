@@ -18,7 +18,6 @@
 .checkoutContainer {
     background-color: $mainBgColor;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: inherit;
@@ -32,15 +31,16 @@
         // padding-top: 3rem;
         // font-size: 1.2rem;
         display: flex;
-        align-items: center;
+        // align-items: center;
         justify-content: space-between;
         // flex-direction: column;
         // justify-content: space-between;
-        width: inherit;
-        height: 100%;
+        width: 100%;
+        height: 8rem;
     }
 
     .pContainer {
+        width: 50%;
         height: calc(100% - 2rem);
         display: flex;
         flex-direction: column;
@@ -49,10 +49,16 @@
 
         span {
             color: black;
+            font-size: 0.875rem;
+            // text-align: left !important;
         }
         p {
-            font-size: 1.2rem !important;
+            display: flex;
+            justify-content: space-around;
+            font-size: 0.8rem;
             color: $productPriceColor;
+            // text-align: right;
+            // padding-left: 1rem;
         }
     }
 
@@ -62,15 +68,24 @@
 
 .buttons {
     width: 45%;
-    height: 6rem;
+    height: calc(100% - 4rem);
     display: flex ;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-between ;
-    align-items: flex-end;
-    padding-bottom: 2rem;
+    // align-items: flex-end;
+    padding: 2rem 0;
+    gap: 1rem;
 
     button {
         height: 2rem;
         width: 4rem;
+        border-radius: 20px;
+        transition: all 0.2s ease-in;
+
+        &:hover {
+            background-color: rgba($color: silver, $alpha: 0.6);
+        }
     }
 }
 
@@ -79,4 +94,52 @@
     flex-direction: column;
     flex-wrap: wrap;
     // height: 20px;
+}
+
+@media (min-width:468px) {
+    .pContainer {
+        p {
+            font-size: 1.2rem !important;
+        }
+
+        span {
+            font-size: 1rem !important;
+        }
+    }
+
+    .buttons {
+        // width: inherit;
+        height: 5rem;
+        button {
+            width: 8rem;
+            // height: 6rem !important;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .checkoutContainer {
+        height: 8rem;
+    }
+
+    .pContainer {
+        // height: inherit;
+        // width: inherit;
+        p {
+        font-size: 2rem !important;
+        }
+
+        span {
+            font-size: 2rem !important;
+        }
+    }
+
+    .buttons {
+        padding: 0;
+        height: 8rem;
+        button {
+            width: 12rem;
+            height: inherit;
+        }
+    }
 }
