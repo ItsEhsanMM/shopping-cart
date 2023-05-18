@@ -26,11 +26,12 @@
     .cartContainer {
         height: inherit;
         display: flex;
+        justify-content: center;
         align-items: center;
         position: relative;
         img {
             width: 2rem !important;
-            z-index: 1;
+            // z-index: 1;
         }
 
         span {
@@ -44,7 +45,7 @@
             height: 1.5rem;
             border-radius: 50%;
             // text-align: center;
-            font-size: 1.5rem;
+            font-size: 2rem;
             display: flex;
             align-items: center;
             justify-content: center;

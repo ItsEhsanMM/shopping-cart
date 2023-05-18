@@ -21,17 +21,17 @@ const CartDetails = ({ data }) => {
       <div className={Styles.container}>
          <img src={image} alt="product" style={{ width: "100px" }} />
          <div>
-            <h2>{shorten(title)}</h2>
-            <h3>{price} $</h3>
+            <h2 className={Styles.title}>{shorten(title)}</h2>
+            <h3 className={Styles.price}>{price} $</h3>
          </div>
          <div className={Styles.spanaBtn}>
             <div>
-               <span>{quantity}</span>
+               <span className={Styles.quantity}>{quantity}</span>
             </div>
             <div className={Styles.buttons}>
                {quantity === 1 ? (
-                  <button onClick={() => dispatch({ type: "REMOVE", payload: data })}>
-                     <img src={trashIcon} alt="remove" style={{ width: "10px" }} />
+                  <button className={Styles.trash} onClick={() => dispatch({ type: "REMOVE", payload: data })}>
+                     <img className={Styles.trashimg} src={trashIcon} alt="remove" style={{ width: "10px" }} />
                   </button>
                ) : (
                   <button className={Styles.minus} onClick={() => dispatch({ type: "DECREASE", payload: data })}>
