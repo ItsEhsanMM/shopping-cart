@@ -1,0 +1,71 @@
+@import '../variables';
+@import '../mixins';
+
+
+.container {
+    width: calc(100% - 2rem);
+    height: 13rem;
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: $productBgColor;
+    @include cartBoxShadow();
+    border-radius: 1rem;
+    padding: 1rem;
+
+    .buttons {
+        display: flex;
+        width: 6rem;
+        height: inherit;
+        align-items: flex-end;
+        // padding-bottom: 6rem;
+        
+        justify-content: space-between;
+
+        button {
+            width: 3rem;
+            height: 1.5rem;
+            font-size: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            background:none;
+
+            img {
+                padding-top: 0.3rem;
+                width: 1.3rem !important;
+                height: 1.3rem !important;
+            }
+        }
+    }
+
+
+}
+img {
+    height: fit-content;
+    margin: 0 1rem;
+}
+
+.spanaBtn {
+    display: flex;
+    flex-direction: column;
+    height: 5.5rem;
+    width: inherit;
+    align-items: center;
+    justify-content: space-between;
+
+    .plus {
+        color:  $productPriceColor;
+    }
+
+    .minus {
+        color: $aColor;
+    }
+
+    span {
+        font-size: 2rem;
+        color: blue;
+    }
+}
